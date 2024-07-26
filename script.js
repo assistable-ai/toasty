@@ -21,16 +21,16 @@ function showToast(message, icon, position, duration) {
     toast.className = `toast-notification ${position}`;
     toast.style.animationDuration = `${duration}s`;
 
-    if (icon) {
-        const img = document.createElement('img');
-        img.src = icon;
-        img.className = 'toast-icon';
-        toast.appendChild(img);
-    }
-
-    const text = document.createElement('p');
-    text.innerText = message;
-    toast.appendChild(text);
+    const iconElement = icon ? `<img src="${icon}" class="toast-icon">` : '';
+    
+    toast.innerHTML = `
+        ${iconElement}
+        <div class="toast-notification-content">
+            <div class="toast-notification-title">Notification Title</div>
+            <div class="toast-notification-message">${message}</div>
+            <div class="toast-notification-time">now</div>
+        </div>
+    `;
 
     document.body.appendChild(toast);
 
