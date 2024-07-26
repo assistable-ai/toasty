@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notifications SaaS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Toast Notification</h1>
+        <form id="notification-form">
+            <input type="text" id="message" placeholder="Message" required>
+            <input type="text" id="icon" placeholder="Icon URL">
+            <select id="position">
+                <option value="top-right">Top Right</option>
+                <option value="top-left">Top Left</option>
+                <option value="bottom-right">Bottom Right</option>
+                <option value="bottom-left">Bottom Left</option>
+            </select>
+            <input type="number" id="duration" placeholder="Duration (seconds)" required>
+            <button type="submit">Create Notification</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
